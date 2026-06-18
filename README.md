@@ -10,7 +10,7 @@
 
 ---
 
-Most of my work falls into three buckets: **tools people can install**, **products that actually run end-to-end**, and **references people actually use**. Here's the short tour.
+My work falls into a few buckets: **tools people can install**, **products that run end-to-end**, **real-time ML research**, and **references people actually use**. Here's the short tour.
 
 <br/>
 
@@ -18,7 +18,7 @@ Most of my work falls into three buckets: **tools people can install**, **produc
 
 > Real packages, not demos. Tested, versioned, and on PyPI.
 
-### [`llmbelt`](https://github.com/YoungAlpaccino/llmbelt) &nbsp; `pip install llmbelt`
+### [`llmbelt`](https://github.com/YoungAlpaccino/llmbelt) &nbsp; `pip install llmbelt` &nbsp; · &nbsp; **v0.3.0**
 
 [![PyPI](https://img.shields.io/pypi/v/llmbelt.svg)](https://pypi.org/project/llmbelt/)
 [![CI](https://github.com/YoungAlpaccino/llmbelt/actions/workflows/ci.yml/badge.svg)](https://github.com/YoungAlpaccino/llmbelt/actions/workflows/ci.yml)
@@ -55,6 +55,31 @@ The UI: landing, auth, dashboard, and a **live Builder** that streams the genera
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/YoungAlpaccino/simple-website-creator-backend-ai/blob/main/LICENSE)
 
 The API: email + password auth (bcrypt + JWT), per-user project CRUD, and **AI generation streamed as Server-Sent Events**. The LLM layer is fully pluggable — **free by default on local Ollama**, swap to **Gemini / Groq / Claude** with one env var. Each site publishes to a clean public slug at `/p/{slug}`. SQLModel/SQLite out of the box, ready to point at Postgres for production.
+
+<br/>
+
+## 🔬 Real-time ML research — vision on the edge
+
+> Live computer-vision pipelines that take the hard road most demos skip: monocular 3D, temporal jitter, occlusion, and *actually* running on a Raspberry Pi and in the browser — not just a desktop GPU. Each follows the same discipline: **one PyTorch model → a single ONNX export → the same weights served on edge, a FastAPI hub, and a React app.**
+
+### [`live-3d-hand-pose-detection`](https://github.com/YoungAlpaccino/live-3d-hand-pose-detection-ai-backend-frontend) — markerless 3D hand pose & mesh
+
+[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![ONNX](https://img.shields.io/badge/ONNX-005CED?logo=onnx&logoColor=white)](https://onnx.ai/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![three.js](https://img.shields.io/badge/three.js-000000?logo=threedotjs&logoColor=white)](https://threejs.org/)
+
+Turns a single webcam into a stable, real-time 3D hand skeleton (21 joints) and a watertight **MANO mesh** — no gloves, markers, or depth sensor. Tackles the four parts most demos fail at: monocular depth/scale ambiguity, temporal jitter (One-Euro filtering), two-hand occlusion, and edge/browser deployment via onnxruntime-web (WebGPU with WASM-SIMD fallback). The end-to-end edge → hub → browser skeleton stream is **runnable today**, with a pluggable MediaPipe/synthetic source so it runs with no camera or downloads.
+
+### [`realtime-sign-language-translation`](https://github.com/YoungAlpaccino/realtime-sign-language-translation) — continuous CSLR & translation (`sign-rt`)
+
+[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![ONNX](https://img.shields.io/badge/ONNX-005CED?logo=onnx&logoColor=white)](https://onnx.ai/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+
+Turns a live signing video stream into gloss and natural-language text in real time — the full **isolated → continuous → translation** path, on a Pi or in the browser. The bet is **pose-first**: extract body/hand/face keypoints once (MediaPipe Holistic), then run a lightweight spatial-temporal graph model (ST-GCN/CTR-GCN) + Conformer-CTC recognizer and a seq2seq translator, with streaming CTC beam decode and KenLM rescoring. Fast, private (keypoints-only mode), and robust.
 
 <br/>
 
