@@ -31,6 +31,11 @@
   <i>Python · FastAPI · React/TypeScript · LLM engineering</i>
 </p>
 
+<p align="center">
+  <b>Amir Mohammad Hemmati</b> — Computer Engineering @ NIT Tehran.<br/>
+  Data science, LLMs, and full-stack AI — shipped end-to-end, edge to browser.
+</p>
+
 <div align="center">
   <img src="https://raw.githubusercontent.com/Anmol-Baranwal/cool-github-profiles/main/images/rainbow-line.gif" width="100%" alt="" />
 </div>
@@ -159,12 +164,26 @@ A curated, **no-fluff** guide to building real applications with LLMs: hand-pick
 
 <br/>
 
-## 🐍 Watch the contributions get eaten
+### Every contribution, the whole way back
+
+> The snake below eats a single year. This one plots **all of it** — every commit, every date, since day one.
+
+<p align="center">
+  <img
+    alt="contribution activity graph across all dates"
+    width="100%"
+    src="https://github-readme-activity-graph.vercel.app/graph?username=YoungAlpaccino&theme=tokyo-night&hide_border=true&hide_title=false&area=true&radius=8&bg_color=0D1117&color=58A6FF&line=58A6FF&point=FFFFFF&area_color=58A6FF&title_color=58A6FF&custom_title=Contributions%20%E2%80%94%20all%20dates"
+  />
+</p>
+
+<br/>
+
+## 🐍 Watch a full year of contributions get eaten
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/YoungAlpaccino/YoungAlpaccino/output/github-contribution-grid-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/YoungAlpaccino/YoungAlpaccino/output/github-contribution-grid-snake.svg" />
-  <img alt="contribution snake animation" src="https://raw.githubusercontent.com/YoungAlpaccino/YoungAlpaccino/output/github-contribution-grid-snake.svg" />
+  <img alt="contribution snake animation — a blue snake eating the full contribution grid" src="https://raw.githubusercontent.com/YoungAlpaccino/YoungAlpaccino/output/github-contribution-grid-snake-dark.svg" />
 </picture>
 
 <br/>

@@ -21,9 +21,12 @@ jobs:
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
+          # The snake eats the FULL contribution grid — every cell across the
+          # whole calendar, themed to match the profile's #58A6FF brand blue.
+          # color_snake = the snake itself; color_dots = empty → brightest cell.
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.svg?palette=github-light&color_snake=#1f6feb&color_dots=#ebedf0,#cfe6ff,#9ccaff,#58a6ff,#1f6feb
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#58a6ff&color_dots=#161b22,#0a2a43,#10456b,#2d76b8,#58a6ff
 
       - name: Push to the output branch
         uses: crazy-max/ghaction-github-pages@v4
